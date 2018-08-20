@@ -1,0 +1,23 @@
+{
+  "name": "caesar-cipher",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LenaBuraja/CaesarCipher.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LenaBuraja/CaesarCipher/issues"
+  },
+  "homepage": "https://github.com/LenaBuraja/CaesarCipher#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
