@@ -17,11 +17,8 @@
     "url": "https://github.com/LenaBuraja/CaesarCipher/issues"
   },
   "homepage": "https://github.com/LenaBuraja/CaesarCipher#readme",
-  "devDependencies": {
-    "babel-preset-env": "^1.7.0"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-istanbul": "^0.12.2",
