@@ -40,21 +40,38 @@ describe('CaesarCipher', () => {
 	},
 	{
 		testCase: 'An invalid character was entered',
-		sourceText: 'сОоб_щЕние',
+		sourceText: 'meS_Sage',
+		shift: 6,
+		expectedResult: undefined,
+	},
+	{
+		testCase: 'Characters from different alphabets',
+		sourceText: 'meSЛage',
+		shift: 6,
+		expectedResult: undefined,
+	},
+	{
+		testCase: 'Characters from different alphabets',
+		sourceText: 'сОобQщЕние',
 		shift: 6,
 		expectedResult: undefined,
 	}].forEach(({ testCase, sourceText, shift, expectedResult }) => {
 		it(testCase, () => {
-			const cipher = new CaesarCipher(shift);
-			if (cipher.shift === null) {
-				assert.strictEqual(cipher.shift, null, 'test: invalid shift');
-			} else {
-				const resultEncrypt = cipher.encrypt(sourceText);
-				assert.strictEqual(resultEncrypt, expectedResult, 'test: invalid encryption result');
-				if (resultEncrypt !== undefined) {
-					const resultDecrypt = cipher.decrypt(resultEncrypt);
-				assert.strictEqual(resultDecrypt, sourceText, 'test: invalid decryption result');
+			try {
+				const cipher = new CaesarCipher(shift);
+				if (cipher.shift === null) {
+					assert.strictEqual(cipher.shift, null, 'test: invalid shift');
+				} else {
+					const resultEncrypt = cipher.encrypt(sourceText);
+					assert.strictEqual(resultEncrypt, expectedResult, 'test: invalid encryption result');
+					if (resultEncrypt !== undefined) {
+						const resultDecrypt = cipher.decrypt(resultEncrypt);
+					assert.strictEqual(resultDecrypt, sourceText, 'test: invalid decryption result');
+					}
 				}
+			}
+			catch(e) {
+				console.log(e.message);
 			}
 		});
 	});
